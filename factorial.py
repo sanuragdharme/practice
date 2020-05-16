@@ -12,8 +12,23 @@ def get_factorial(num):
     for i in range(1, num+1):
         fact = fact * i
 
-    print("Factorial of {}: {}".format(num, fact))
+    return fact
 
 
-get_factorial(input("Enter Positive Integer: "))
+def factorial_using_recursion(num):
+    if type(num) == 'str':
+        if not num.isdigit():
+            print("Please enter positive integer.")
+            return
+
+    num = int(num)
+    if num == 0:
+        return 1
+
+    return num * factorial_using_recursion(num - 1)
+
+
+input_num = input("Enter Positive Integer: ")
+print("Factorial of {}: {}".format(input_num, get_factorial(input_num)))
+print("Factorial of {} using recursion: {}".format(input_num, factorial_using_recursion(input_num)))
 

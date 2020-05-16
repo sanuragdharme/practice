@@ -17,4 +17,23 @@ def generate_fibonacci(num):
         num1, num2 = num2, fibonacci
 
 
+def generate_fibonacci_till_num(num):
+    if not num.isdigit():
+        print("Please enter number.")
+        return
+
+    num = int(num)
+    num1 = 0
+    num2 = 1
+
+    while num:
+        print(num1, end=" ")
+        if num1 == num:
+            break
+        fibonacci = num1 + num2
+        num1, num2 = num2, fibonacci
+
+
 generate_fibonacci(input("Enter Number: "))
+print("")
+generate_fibonacci_till_num(input("Enter Number when you want to stop: "))
